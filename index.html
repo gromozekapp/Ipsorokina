@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Minimalist Site Example</title>
+    <title>Site to support our applications and products</title>
     <style>
         /* Общие стили для всего сайта */
         body, html {
@@ -12,35 +12,46 @@
             padding: 0;
             font-family: Arial, sans-serif;
             color: #333;
+            overflow-x: hidden;
         }
 
         body {
             background-color: #f4f4f4;
-            overflow-x: hidden;
         }
 
         /* Секция главного экрана (Hero Section) */
         .hero {
+            position: relative;
             height: 100vh;
-            background-image: url('https://source.unsplash.com/1600x900/?nature'); /* Замените на ваше изображение */
-            background-size: cover;
-            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
+            color: white;
+            z-index: 1;
         }
 
         .hero h1 {
             font-size: 3em;
-            color: white;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Стили для фона частиц */
+        #particle-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
         }
 
         /* Стили для секций */
         .section {
             padding: 50px;
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
         .section h2 {
@@ -65,8 +76,8 @@
         }
 
         .gallery img {
-            width: 300px;
-            height: 200px;
+            width: 400px;
+            height: 300px;
             object-fit: cover;
             margin: 10px;
             transition: transform 0.5s ease;
@@ -74,22 +85,6 @@
 
         .gallery img:hover {
             transform: scale(1.1);
-        }
-
-        /* Адаптивность */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2em;
-            }
-
-            .section h2 {
-                font-size: 2em;
-            }
-
-            .gallery img {
-                width: 100%;
-                height: auto;
-            }
         }
 
         /* Плавное появление элементов при скролле */
@@ -103,57 +98,155 @@
             opacity: 1;
             transform: translateY(0);
         }
-
     </style>
 </head>
 <body>
 
     <!-- Главная секция (Hero) -->
     <section class="hero">
-        <h1>Welcome to My Minimalist Site</h1>
+        <div id="particle-background"></div> <!-- Контейнер для WebGL -->
+        <h1>ИП Сорокина к вашим услугам!</h1>
     </section>
 
     <!-- Основные секции сайта -->
     <section class="section" id="about">
-        <h2>About Me</h2>
-        <p class="fade-in">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis. In condimentum facilisis porta. Sed nec diam eu diam mattis viverra. Nulla fringilla, orci ac euismod semper.</p>
+        <h2>Наш подход:</h2>
+        <p class="fade-in">Вот ключевые UX-решения и подходы, которые мы реализуем:<br>
+        <img src="IPSorokina.files/image005.png" alt="BarCode" width="50" height="50"> <br>
+        <p>1. Пользовательские исследования<br></p>
+
+            •    Проведение исследований помогает глубже понять целевую аудиторию, ее задачи и болевые точки.<br>
+            •    Часто используются методы опросов, интервью и наблюдений, чтобы лучше определить поведенческие паттерны пользователей.<br>
+        <img src="IPSorokina.files/image009.png" alt="BarCode" width="50" height="50"> <br>
+        <p>2. Простота и минимализм<br></p>
+
+            •    Принцип “меньше — лучше”: оставьте только те элементы, которые действительно нужны пользователю для достижения цели.<br>
+            •    Меньше информации на экране позволяет быстрее находить ключевые функции и снижает когнитивную нагрузку.<br>
+            <img src="IPSorokina.files/image008.png" alt="BarCode" width="50" height="50"> <br>
+        <p>3. Прозрачная навигация<br></p>
+
+            •    Разработка простой, логичной структуры приложения или сайта помогает пользователям быстро находить нужный контент.<br>
+            •    Применение видимых кнопок, интуитивных меню, хлебных крошек и четких CTA-кнопок (call-to-action) делает навигацию легкой и понятной.<br>
+            <img src="IPSorokina.files/image007.png" alt="BarCode" width="50" height="50"> <br>
+        <p>4. Единообразие и предсказуемость<br></p>
+
+            •    Дизайны интерфейсов должны иметь одинаковые шрифты, цвета, иконки и стили кнопок, чтобы пользователи могли легко распознавать и взаимодействовать с элементами.<br>
+            •    Единый стиль уменьшает вероятность ошибок и делает работу с приложением более приятной.<br>
+            <img src="IPSorokina.files/image006.png" alt="BarCode" width="50" height="50"> <br>
+        <p>5. Визуальная иерархия<br></p>
+
+            •    Использование крупного шрифта, жирного текста, ярких цветов и визуальных акцентов, чтобы обозначить ключевые элементы интерфейса.<br>
+            •    Важная информация выделяется в первую очередь, чтобы пользователи могли ее быстро найти.<br>
+            <img src="IPSorokina.files/image005.png" alt="BarCode" width="50" height="50"> <br>
+        <p>6. Фокус на мобильном UX (Mobile-First)<br></p>
+
+            •    Мобильные интерфейсы требуют особого внимания, так как экраны меньше, и взаимодействие отличается.<br>
+            •    Адаптивный дизайн и оптимизация для сенсорного управления помогают обеспечить удобство при использовании на мобильных устройствах.<br>
+            <img src="IPSorokina.files/image008.png" alt="BarCode" width="50" height="50"> <br>
+        <p>7. Микровзаимодействия (Microinteractions)<br></p>
+
+            •    Небольшие анимации и изменения интерфейса (например, всплывающие подсказки или изменения кнопок при наведении) создают интуитивные и приятные для пользователя переходы.<br>
+            •    Микровзаимодействия помогают упростить навигацию и проинформировать о результате действия.<br>
+            <img src="IPSorokina.files/image009.png" alt="BarCode" width="50" height="50"> <br>
+        <p>8. Отклики и обратная связь (Feedback)<br></p>
+
+            •    Отображение подтверждения после завершения действия помогает пользователю понять, что действие выполнено успешно (например, добавление элемента в корзину).<br>
+            •    Негативная обратная связь, как например, всплывающее сообщение об ошибке, помогает пользователю понять, что пошло не так и как это можно исправить.<br>
+            <img src="IPSorokina.files/image007.png" alt="BarCode" width="50" height="50"> <br>
+        <p>9. Оптимизация загрузки и производительности<br></p>
+
+            •    Быстрая загрузка контента и плавные переходы играют важную роль в восприятии интерфейса.<br>
+            •    Ленивая загрузка (lazy load), оптимизация изображений и эффективная загрузка данных помогают ускорить взаимодействие с продуктом.<br>
+            <img src="IPSorokina.files/image009.png" alt="BarCode" width="50" height="50"> <br>
+        <p>10. Доступность (Accessibility)<br></p>
+
+            •    Интерфейсы должны быть удобны для всех, включая людей с ограниченными возможностями.<br>
+            •    Использование читабельного текста, высококонтрастного интерфейса, поддержки экранных дикторов и альтернативного текста для изображений — все это улучшает доступность приложения.<br>
+            <img src="IPSorokina.files/image006.png" alt="BarCode" width="50" height="50"> <br>
+        <p>11. Контекстные подсказки и обучение<br></p>
+
+            •    Встроенные подсказки, обучающие модули или примеры действий помогают пользователю легче понять функционал, особенно если интерфейс новый или сложный.<br>
+            •    Всплывающие советы, прогрессивное раскрытие информации и пошаговое обучение облегчают процесс освоения.<br>
+            <img src="IPSorokina.files/image005.png" alt="BarCode" width="50" height="50"> <br>
+        <p>12. Персонализация<br></p>
+
+            •    Пользователи любят интерфейсы, которые подстраиваются под их предпочтения и поведение.<br>
+            •    Например, индивидуальные рекомендации на основе истории использования или возможности кастомизации интерфейса повышают удовлетворение.</p>
     </section>
 
     <section class="section" id="gallery">
-        <h2>My Portfolio</h2>
+        <h2>Мои услуги</h2>
         <div class="gallery">
-            <img src="https://source.unsplash.com/300x200/?city" alt="City Image">
-            <img src="https://source.unsplash.com/300x200/?nature,water" alt="Water Image">
-            <img src="https://source.unsplash.com/300x200/?architecture" alt="Architecture Image">
-            <img src="https://source.unsplash.com/300x200/?night" alt="Night Image">
+            <img src="IPSorokina.files/image026.png" alt="Molecula">
+            <img src="IPSorokina.files/image016.png" alt="Computer">
+            <img src="IPSorokina.files/image023.png" alt="Medicine">
+            <img src="IPSorokina.files/image020.png" alt="Mobile">
         </div>
     </section>
 
     <section class="section" id="contact">
-        <h2>Contact</h2>
-        <p class="fade-in">If you want to work together or have any questions, feel free to reach out via <a href="mailto:email@example.com">email@example.com</a>.</p>
+        <h2>Контакты</h2>
+        <img src="IPSorokina.files/image001.png" alt="BarCode" width="100" height="100"> <br>
+        <p class="fade-in">Первая консультация - бесплатна!<br>
+        <a href="mailto:aleksandra.sorokina.bulgaria@gmail.com">aleksandra.sorokina.bulgaria@gmail.com</a>.</p>
     </section>
 
+    <!-- Подключение Three.js и создание фона с частицами -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // Скрипт для плавного появления элементов при скролле
-        const faders = document.querySelectorAll('.fade-in');
+        // Настройка Three.js
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
 
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('particle-background').appendChild(renderer.domElement);
+
+        // Настройка частиц
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 5000;
+        const positionArray = new Float32Array(particlesCount * 3);
+
+        for (let i = 0; i < particlesCount * 3; i++) {
+            positionArray[i] = (Math.random() - 0.5) * 10; // случайное положение для каждой частицы
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positionArray, 3));
+        const particlesMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.05 });
+
+        const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particles);
+
+        // Функция анимации
+        function animate() {
+            requestAnimationFrame(animate);
+            particles.rotation.x += 0.001;
+            particles.rotation.y += 0.001;
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Адаптация к изменению размера окна
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+
+        // Плавное появление элементов при скролле
+        const faders = document.querySelectorAll('.fade-in');
         const appearOptions = {
             threshold: 0.1,
             rootMargin: "0px 0px -50px 0px"
         };
 
-        const appearOnScroll = new IntersectionObserver(function(
-            entries, 
-            appearOnScroll
-        ) {
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
             entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('show');
-                    appearOnScroll.unobserve(entry.target);
-                }
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('show');
+                appearOnScroll.unobserve(entry.target);
             });
         }, appearOptions);
 
